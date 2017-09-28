@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="favicon.png?" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>labiteam-test</title>
+</head>
+
+<body class="page" id="page">
+
+  <aside class="aside">
+   <div class="category__select">
+     <h2 class="select__title">Chose Category</h2>
+     <select class="select" id="select_category">
+       <option value='null'>Best Match</option>
+       <option value='Match 1'>Match 1</option>
+       <option value='Match 2'>Match 2</option>
+     </select>
+   </div>
+    <div class="subcategory__select">
+      <h2 class="select__title">Chose Subcategory</h2>
+      <div class="input__box">
+        <input type="checkbox" id="allSubcategory">
+        <label class="label" for="allSubcategory">All Subcategory</label>
+      </div>
+      <div class="input__box">
+        <input type="checkbox" id="dataEntry">
+        <label class="label" for="dataEntry">Data Entry</label>
+      </div>
+      <div class="input__box">
+        <input type="checkbox" id="personalAssistant">
+        <label class="label" for="personalAssistant">Personal Assistant</label>
+      </div>
+      <div class="input__box">
+        <input type="checkbox" id="webResearch">
+        <label class="label" for="webResearch">Web Research</label>
+      </div>
+      <div class="input__box">
+        <input type="checkbox" id="emailResponse">
+        <label class="label" for="emailResponse">Email Response Handling</label>
+      </div>
+      <div class="input__box">
+        <input type="checkbox" id="transcription">
+        <label class="label" for="transcription">Transcription</label>
+      </div>
+      <div class="input__box">
+        <input type="checkbox" id="other">
+        <label class="label" for="other">Other - Administrative support</label>
+      </div>
+    </div>
+    <div class="rating__select">
+      <h2 class="select__title">Client Rating</h2>
+      <div class="input__box">
+        <input type="radio" id="anyStars">
+        <label class="label" for="anyStars">Any stars</label>
+      </div>
+      <div class="input__box">
+        <input type="radio" id="fiveStars">
+        <label class="label" for="fiveStars">5 stars</label>
+      </div>
+      <div class="input__box">
+        <input type="radio" id="fourPointFiveStars">
+        <label class="label" for="fourPointFiveStars">4.5 stars and Up</label>
+      </div>
+      <div class="input__box">
+        <input type="radio" id="fourStars">
+        <label class="label" for="fourStars">4 stars and Up</label>
+      </div>
+      <div class="input__box">
+        <input type="checkbox" id="unrated">
+        <label class="label" for="unrated">Include unrated freelancers</label>
+      </div>
+    </div>
+    <div class="budget__select">
+      <h2 class="select__title">Budget</h2>
+      <select class="select" id="select__budget">
+        <option value='null'>Any budget</option>
+        <option value='Budget 1'>Budget 1</option>
+        <option value='Budget 2'>Budget 2</option>
+      </select>
+    </div>
+    <div class="delivery__select">
+      <h2 class="select__title">Delivery</h2>
+      <select class="select" id="select__delivery">
+        <option value='null'>Any..</option>
+        <option value='Delivery 1'>Delivery 1</option>
+        <option value='Delivery 2'>Delivery 2</option>
+      </select>
+    </div>
+    <div class="location__select">
+      <h2 class="select__title">Location</h2>
+      <select class="select" id="select__location">
+        <option value='null'>Any Location</option>
+        <option value='Location 1'>Location 1</option>
+        <option value='Location 2'>Location 2</option>
+      </select>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="articles__item">
+      <script id="template" type="text/template">
+          {{#each posts}}
+        <article class="article">
+          <h2 class="article__title">{{name}}</h2>
+          <ul class="options__list">
+            {{#each options}}
+            <li class="options__item">
+              <p class="options__title">{{@key}}:</p>
+              <p class="options__value">{{this}}</p>
+            </li>
+            {{/each}}
+          </ul>
+          <p class="article__text">{{description}}</p>
+          <div class="article__info">
+            <div class="article__category">
+              <p class="options__title">Category:</p>
+              <p class="options__value">{{category}}</p>
+            </div>
+            <div class="article__skills">
+              <p class="options__title">Skills:</p>
+              <ul class="skills__list">
+                {{#each slils}}
+                <li class="skills__item" key="{{id}}">
+                  <a class="skills__link" href="#">{{name}}</a>
+                </li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+          <div class="article__client">
+            <p class="options__title">Client:</p>
+            <p class="options__value">{{client.country}}</p>
+            <p class="options__value">{{client.rating}}</p>
+          <fieldset class="rating">
+            <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+            <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+            <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+            <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+            <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+            <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+            <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+            <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+            <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+          </fieldset>
+          </div>
+        </article>
+          {{/each}}
+      </script>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
